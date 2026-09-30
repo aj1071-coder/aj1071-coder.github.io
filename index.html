@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadya Jaiswal - Media Marketing & Visual Storytelling Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FFA1BA',
+                        gold: '#998731',
+                        skyblue: '#5FA8C2',
+                        brown: '#673C32',
+                        Red: '#7D2027',
+                        brownLight: '#7E4C41',
+                        brownDark: '#4A2A22'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Global Typography Rule */
+        body, button, input, textarea, select {
+            font-family: 'Arial Narrow', 'Arial', 'Helvetica Neue', sans-serif !important;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAE3B1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #673C32;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #998731;
+        }
+
+        .glass-header {
+            background-color: rgba(250, 227, 177, 0.92);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .custom-shadow {
+            box-shadow: 0 10px 25px -5px rgba(103, 60, 50, 0.15), 0 8px 10px -6px rgba(103, 60, 50, 0.1);
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(103, 60, 50, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-[#FAE3B1] text-[#673C32] min-h-screen flex flex-col justify-between antialiased selection:bg-[#5FA8C2] selection:text-white">
+
+    <!-- STICKY NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 glass-header border-b-2 border-[#998731]/30 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand / Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-[#673C32] text-[#FAE3B1] flex items-center justify-center font-bold text-xl shadow-md group-hover:bg-[#998731] transition-colors duration-300">
+                    AJ
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl tracking-tight text-[#673C32] group-hover:text-[#998731] transition-colors">
+                        Aadya Jaiswal
+                    </span>
+                    <span class="text-xs text-[#998731] font-semibold tracking-wider uppercase">Media Marketing & Storytelling</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 font-bold text-base tracking-wide">
+                <a href="#about" class="text-[#673C32] hover:text-[#5FA8C2] transition-colors">About</a>
+                <a href="#skills" class="text-[#673C32] hover:text-[#5FA8C2] transition-colors">Skills</a>
+                <a href="#projects" class="text-[#673C32] hover:text-[#5FA8C2] transition-colors">Projects</a>
+                <a href="#contact" class="text-[#673C32] hover:text-[#5FA8C2] transition-colors">Contact</a>
+            </nav>
+
+            <!-- Quick Contact CTAs -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="tel:8484699269" class="px-3.5 py-2 rounded-xl border-2 border-[#673C32] text-[#673C32] hover:bg-[#673C32] hover:text-[#FAE3B1] font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                    <span>848-469-9269</span>
+                </a>
+                <a href="mailto:aadya.jaiswal@gmail.com" class="px-4 py-2 rounded-xl bg-[#5FA8C2] text-white hover:bg-[#488FA7] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-xs"></i>
+                    <span>Email Me</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" aria-label="Toggle Mobile Menu" class="md:hidden p-2.5 rounded-xl bg-[#673C32] text-[#FAE3B1] hover:bg-[#998731] transition-colors">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#FAE3B1] border-t-2 border-[#998731]/40 px-6 py-4 space-y-3 shadow-xl">
+            <a href="#about" class="block py-2 text-[#673C32] font-bold text-lg hover:text-[#5FA8C2] mobile-link">About</a>
+            <a href="#skills" class="block py-2 text-[#673C32] font-bold text-lg hover:text-[#5FA8C2] mobile-link">Skills</a>
+            <a href="#projects" class="block py-2 text-[#673C32] font-bold text-lg hover:text-[#5FA8C2] mobile-link">Projects</a>
+            <a href="#contact" class="block py-2 text-[#673C32] font-bold text-lg hover:text-[#5FA8C2] mobile-link">Contact</a>
+            
+            <div class="pt-3 border-t border-[#998731]/30 flex flex-col gap-2">
+                <a href="tel:8484699269" class="w-full py-2.5 rounded-xl border-2 border-[#673C32] text-[#673C32] text-center font-bold text-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> 848-469-9269
+                </a>
+                <a href="mailto:aadya.jaiswal@gmail.com" class="w-full py-2.5 rounded-xl bg-[#5FA8C2] text-white text-center font-bold text-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-envelope"></i> aadya.jaiswal@gmail.com
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- HERO / PERSONAL STATEMENT SECTION -->
+        <section id="about" class="relative py-16 lg:py-24 overflow-hidden border-b-2 border-[#998731]/20">
+            <!-- Background Decorative Ornaments -->
+            <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#998731]/10 rounded-full blur-3xl -z-10"></div>
+            <div class="absolute bottom-5 right-10 w-72 h-72 bg-[#5FA8C2]/15 rounded-full blur-2xl -z-10"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center space-y-8">
+                    
+                    <!-- Identity Pill -->
+                    <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#673C32] text-[#FAE3B1] text-xs sm:text-sm font-bold tracking-widest uppercase shadow-md">
+                        <span class="w-2.5 h-2.5 rounded-full bg-[#5FA8C2] animate-pulse"></span>
+                        Media Marketing & Visual Strategist
+                    </div>
+
+                    <!-- Main Catchy Name Header -->
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#673C32] tracking-tight leading-none">
+                        Aadya Jaiswal
+                    </h1>
+
+                    <p class="text-lg sm:text-xl font-bold text-[#998731] tracking-wide uppercase">
+                        Creative Storytelling &bull; Digital Content &bull; Brand Engagement
+                    </p>
+
+                    <!-- Exact Required Personal Statement -->
+                    <div class="p-6 sm:p-8 rounded-3xl bg-white/70 border-2 border-[#998731] shadow-xl relative text-left sm:text-center">
+                        <i class="fa-solid fa-quote-left text-3xl text-[#5FA8C2] absolute -top-4 left-6 sm:left-10 bg-[#FAE3B1] px-2"></i>
+                        <p class="text-xl sm:text-2xl text-[#673C32] font-semibold leading-relaxed tracking-normal pt-2">
+                            "Driven by a passion for media marketing, I blend visual design and strategic storytelling to build compelling content that truly connects with audiences."
+                        </p>
+                    </div>
+
+                    <!-- Action Call to Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                        <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#5FA8C2] hover:bg-[#488FA7] text-white font-extrabold text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center gap-3">
+                            <span>View Projects</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#673C32] hover:bg-[#4A2A22] text-[#FAE3B1] font-extrabold text-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex items-center justify-center gap-3">
+                            <span>Contact Me</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </a>
+                    </div>
+
+                    <!-- Quick Contact Bar -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-8 border-t-2 border-[#998731]/30 max-w-2xl mx-auto">
+                        <a href="mailto:aadya.jaiswal@gmail.com" class="p-4 rounded-2xl bg-white/60 border border-[#998731]/40 flex items-center justify-center gap-3 hover:bg-white transition-colors group">
+                            <i class="fa-solid fa-envelope text-2xl text-[#5FA8C2] group-hover:scale-110 transition-transform"></i>
+                            <span class="text-base font-bold text-[#673C32]">aadya.jaiswal@gmail.com</span>
+                        </a>
+                        <a href="tel:8484699269" class="p-4 rounded-2xl bg-white/60 border border-[#998731]/40 flex items-center justify-center gap-3 hover:bg-white transition-colors group">
+                            <i class="fa-solid fa-phone text-2xl text-[#998731] group-hover:scale-110 transition-transform"></i>
+                            <span class="text-base font-bold text-[#673C32]">848-469-9269</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="py-20 bg-[#F5D99B]/50 border-b-2 border-[#998731]/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="px-4 py-1.5 rounded-full bg-[#5FA8C2] text-white text-xs font-bold uppercase tracking-widest">
+                        Highlighted Expertise
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#673C32] tracking-tight mt-3">
+                        Technical & Professional Skills
+                    </h2>
+                    <p class="text-lg text-[#673C32]/80 mt-3 font-medium">
+                        Core competencies across photography, design software, video editing, analytics, and social content strategy.
+                    </p>
+                </div>
+
+                <!-- 8 Highlighted Skills Grid Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Skill 1: Photography -->
+                    <div class="p-6 rounded-3xl bg-white border-2 border-[#998731] custom-shadow card-hover flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-[#5FA8C2] text-white flex items-center justify-center text-2xl font-bold mb-4 shadow-md group-hover:bg-[#673C32] transition-colors">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                            <span class="text-xs font-bold text-[#998731] uppercase tracking-wider">Visual Arts</span>
+                            <h3 class="text-2xl font-extrabold text-[#673C32] mt-1">Photography</h3>
+                            <p class="text-sm text-[#673C32]/80 mt-2 font-medium">
+                                High-quality framing, visual composition, portraiture, and event coverage for media collateral.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-[#FAE3B1]">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-[#FAE3B1] text-[#673C32] text-xs font-bold">Creative Media</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 2: Canva -->
+                    <div class="p-6 rounded-3xl bg-white border-2 border-[#998731] custom-shadow card-hover flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-[#998731] text-white flex items-center justify-center text-2xl font-bold mb-4 shadow-md group-hover:bg-[#5FA8C2] transition-colors">
+                                <i class="fa-solid fa-pen-ruler"></i>
+                            </div>
+                            <span class="text-xs font-bold text-[#998731] uppercase tracking-wider">Graphics</span>
+                            <h3 class="text-2xl font-extrabold text-[#673C32] mt-1">Canva</h3>
+                            <p class="text-sm text-[#673C32]/80 mt-2 font-medium">
+                                Rapid social graphic creation, story templates, pitch decks, and digital brand consistency.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-[#FAE3B1]">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-[#FAE3B1] text-[#673C32] text-xs font-bold">Rapid Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 3: Adobe Photoshop -->
+                    <div class="p-6 rounded-3xl bg-white border-2 border-[#998731] custom-shadow card-hover flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-[#673C32] text-[#FAE3B1] flex items-center justify-center text-2xl font-bold mb-4 shadow-md group-hover:bg-[#998731] transition-colors">
+                                <i class="fa-solid fa-image"></i>
+                            </div>
+                            <span class="text-xs font-bold text-[#998731] uppercase tracking-wider">Image Editing</span>
+                            <h3 class="text-2xl font-extrabold text-[#673C32] mt-1">Adobe Photoshop</h3>
+                            <p class="text-sm text-[#673C32]/80 mt-2 font-medium">
+                                Advanced photo retouching, graphic layering, banner design, and visual asset perfection.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-[#FAE3B1]">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-[#FAE3B1] text-[#673C32] text-xs font-bold">Adobe Suite</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 4: Adobe Illustrator -->
+                    <div class="p-6 rounded-3xl bg-white border-2 border-[#998731] custom-shadow card-hover flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-[#5FA8C2] text-white flex items-center justify-center text-2xl font-bold mb-4 shadow-md group-hover:bg-[#673C32] transition-colors">
+                                <i class="fa-solid fa-bezier-curve"></i>
+                            </div>
+                            <span class="text-xs font-bold text-[#998731] uppercase tracking-wider">Vector Art</span>
+                            <h3 class="text-2xl font-extrabold text-[#673C32] mt-1">Adobe Illustrator</h3>
+                            <p class="text-sm text-[#673C32]/80 mt-2 font-medium">
+                                Custom vector graphics, typography design, logo creation, and scalable brand assets.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-[#FAE3B1]">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-[#FAE3B1] text-[#673C32] text-xs font-bold">Vector Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 5: Adobe Premiere Pro -->
+                    <div class="p-6 rounded-3xl bg-white border-2 border-[#998731] custom-shadow card-hover flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-[#673C32] text-[#FAE3B1] flex items-center justify-center text-2xl font-bold mb-4 shadow-md group-hover:bg-[#5FA8C2] transition-colors">
+                                <i class="fa-solid fa-film"></i>
+                            </div>
+                            <span class="text-xs font-bold text-[#998731] uppercase tracking-wider">Video Editing</span>
+                            <h3 class="text-2xl font-extrabold text-[#673C32] mt-1">Adobe Premiere Pro</h3>
+                            <p class="text-sm text-[#673C32]/80 mt-2 font-medium">
+                                Video editing, timeline cutting, audio mixing, recruitment video highlights, and transitions.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-[#FAE3B1]">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-[#FAE3B1] text-[#673C32] text-xs font-bold">Post Production</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 6: Microsoft Excel -->
+                    <div class="p-6 rounded-3xl bg-white border-2 border-[#998731] custom-shadow card-hover flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-[#998731] text-white flex items-center justify-center text-2xl font-bold mb-4 shadow-md group-hover:bg-[#673C32] transition-colors">
+                                <i class="fa-solid fa-table"></i>
+                            </div>
+                            <span class="text-xs font-bold text-[#998731] uppercase tracking-wider">Analytics</span>
+                            <h3 class="text-2xl font-extrabold text-[#673C32] mt-1">Microsoft Excel</h3>
+                            <p class="text-sm text-[#673C32]/80 mt-2 font-medium">
+                                Marketing data tracking, campaign metrics management, content calendars, and reporting.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-[#FAE3B1]">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-[#FAE3B1] text-[#673C32] text-xs font-bold">Data & Ops</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 7: Social Media Design -->
+                    <div class="p-6 rounded-3xl bg-white border-2 border-[#998731] custom-shadow card-hover flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-[#5FA8C2] text-white flex items-center justify-center text-2xl font-bold mb-4 shadow-md group-hover:bg-[#998731] transition-colors">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </div>
+                            <span class="text-xs font-bold text-[#998731] uppercase tracking-wider">Platform Art</span>
+                            <h3 class="text-2xl font-extrabold text-[#673C32] mt-1">Social Media Design</h3>
+                            <p class="text-sm text-[#673C32]/80 mt-2 font-medium">
+                                Feed layout design, carousel graphics, reel covers, and platform-optimized visuals.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-[#FAE3B1]">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-[#FAE3B1] text-[#673C32] text-xs font-bold">Engagement</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill 8: Content Creation -->
+                    <div class="p-6 rounded-3xl bg-white border-2 border-[#998731] custom-shadow card-hover flex flex-col justify-between group">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-[#673C32] text-[#FAE3B1] flex items-center justify-center text-2xl font-bold mb-4 shadow-md group-hover:bg-[#5FA8C2] transition-colors">
+                                <i class="fa-solid fa-lightbulb"></i>
+                            </div>
+                            <span class="text-xs font-bold text-[#998731] uppercase tracking-wider">Strategy</span>
+                            <h3 class="text-2xl font-extrabold text-[#673C32] mt-1">Content Creation</h3>
+                            <p class="text-sm text-[#673C32]/80 mt-2 font-medium">
+                                End-to-end creative ideation, copywriting, brand storytelling, and campaign messaging.
+                            </p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-[#FAE3B1]">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-[#FAE3B1] text-[#673C32] text-xs font-bold">Strategy</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="py-20 border-b-2 border-[#998731]/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="px-4 py-1.5 rounded-full bg-[#673C32] text-[#FAE3B1] text-xs font-bold uppercase tracking-widest">
+                        Portfolio Showcase
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#673C32] tracking-tight mt-3">
+                        Featured Projects
+                    </h2>
+                    <p class="text-lg text-[#673C32]/80 mt-3 font-medium">
+                        Highlighting recruitment video production, social media strategy, and digital photography.
+                    </p>
+                </div>
+
+                <!-- Projects Showcase Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- PROJECT 1: Delta Sigma Pi Recruitment Video -->
+                    <div class="rounded-3xl bg-white border-2 border-[#998731] custom-shadow overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <!-- YouTube Embed Player -->
+                            <div class="relative w-full aspect-video bg-[#673C32]">
+                                <iframe 
+                                    class="w-full h-full" 
+                                    src="https://www.youtube.com/embed/xde_IMSSNoE" 
+                                    title="Delta Sigma Pi Rho Tau Chapter Recruitment Video" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#5FA8C2] text-white">Adobe Premiere Pro</span>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#998731] text-white">Video Editing</span>
+                                </div>
+                                
+                                <h3 class="text-2xl font-extrabold text-[#673C32] group-hover:text-[#5FA8C2] transition-colors">
+                                    Delta Sigma Pi Recruitment Video
+                                </h3>
+                                
+                                <!-- Exact Required Description Text -->
+                                <p class="text-base text-[#673C32]/90 mt-3 leading-relaxed font-semibold border-l-4 border-[#5FA8C2] pl-3">
+                                    "Created an engaging recruitment video for the Delta Sigma Pi Rho Tau Chapter, featuring the brothers and fraternity highlights"
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 pt-0">
+                            <a href="https://m.youtube.com/watch?v=xde_IMSSNoE&t=8s&pp=2AEIkAIB0gcJCYsCo7VqN5tD&ra=m" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="w-full py-3 px-4 rounded-xl bg-[#673C32] hover:bg-[#4A2A22] text-[#FAE3B1] font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md">
+                                <i class="fa-brands fa-youtube text-lg text-red-400"></i>
+                                <span>Watch on YouTube</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 2: Social Media Campaign -->
+                    <div class="rounded-3xl bg-white border-2 border-[#998731] custom-shadow overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <!-- Mockup Graphic Container -->
+                            <div class="relative w-full aspect-video bg-gradient-to-br from-[#673C32] to-[#998731] p-6 flex flex-col justify-center items-center text-white text-center">
+                                <i class="fa-solid fa-hashtag text-5xl text-[#FAE3B1] mb-2 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-xs uppercase font-extrabold tracking-widest text-[#5FA8C2]">Social Campaign</span>
+                                <span class="text-xl font-extrabold mt-1">Multi-Platform Visual Deck</span>
+                            </div>
+
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#998731] text-white">Canva</span>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#5FA8C2] text-white">Adobe Illustrator</span>
+                                </div>
+                                
+                                <h3 class="text-2xl font-extrabold text-[#673C32] group-hover:text-[#5FA8C2] transition-colors">
+                                    Social Media Marketing & Design Campaign
+                                </h3>
+                                
+                                <p class="text-sm text-[#673C32]/80 mt-3 leading-relaxed font-medium">
+                                    Designed cohesive social media graphics, Instagram carousel posts, and promotional templates engineered to maximize audience interaction and brand presence.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 pt-0">
+                            <button onclick="openModal('campaignModal')" class="w-full py-3 px-4 rounded-xl bg-[#5FA8C2] hover:bg-[#488FA7] text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md">
+                                <i class="fa-solid fa-circle-info"></i>
+                                <span>View Campaign Details</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 3: Photography Portfolio -->
+                    <div class="rounded-3xl bg-white border-2 border-[#998731] custom-shadow overflow-hidden flex flex-col justify-between group">
+                        <div>
+                            <!-- Mockup Image Container -->
+                            <div class="relative w-full aspect-video bg-gradient-to-br from-[#5FA8C2] to-[#673C32] p-6 flex flex-col justify-center items-center text-white text-center">
+                                <i class="fa-solid fa-camera-retro text-5xl text-[#FAE3B1] mb-2 group-hover:scale-110 transition-transform"></i>
+                                <span class="text-xs uppercase font-extrabold tracking-widest text-[#FAE3B1]">Visual Gallery</span>
+                                <span class="text-xl font-extrabold mt-1">Photo Editing & Composition</span>
+                            </div>
+
+                            <div class="p-6">
+                                <div class="flex flex-wrap gap-2 mb-3">
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#673C32] text-[#FAE3B1]">Photography</span>
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-[#998731] text-white">Adobe Photoshop</span>
+                                </div>
+                                
+                                <h3 class="text-2xl font-extrabold text-[#673C32] group-hover:text-[#5FA8C2] transition-colors">
+                                    Visual Storytelling & Photography Portfolio
+                                </h3>
+                                
+                                <p class="text-sm text-[#673C32]/80 mt-3 leading-relaxed font-medium">
+                                    Digital photography series combining camera techniques with Adobe Photoshop color grading and image retouching for visual media campaigns.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="p-6 pt-0">
+                            <button onclick="openModal('photoModal')" class="w-full py-3 px-4 rounded-xl bg-[#998731] hover:bg-[#7D6E26] text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-md">
+                                <i class="fa-solid fa-images"></i>
+                                <span>Explore Gallery Info</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-20 bg-[#F5D99B]/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="px-4 py-1.5 rounded-full bg-[#5FA8C2] text-white text-xs font-bold uppercase tracking-widest">
+                        Get In Touch
+                    </span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-[#673C32] tracking-tight mt-3">
+                        Contact Aadya Jaiswal
+                    </h2>
+                    <p class="text-lg text-[#673C32]/80 mt-3 font-medium">
+                        Interested in media marketing, video production, or design collaborations? Reach out directly!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Left: Direct Contact Information Cards (5 Cols) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        
+                        <div class="p-8 rounded-3xl bg-[#673C32] text-[#FAE3B1] custom-shadow space-y-6">
+                            <h3 class="text-2xl font-extrabold border-b-2 border-[#998731] pb-3">Direct Contact Info</h3>
+                            
+                            <!-- Email Link -->
+                            <a href="mailto:aadya.jaiswal@gmail.com" class="flex items-start gap-4 p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-colors group">
+                                <div class="w-12 h-12 rounded-xl bg-[#5FA8C2] text-white flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="overflow-hidden">
+                                    <div class="text-xs uppercase font-bold text-[#998731] tracking-wider">Email Address</div>
+                                    <div class="text-lg font-bold text-white truncate">aadya.jaiswal@gmail.com</div>
+                                    <div class="text-xs text-[#FAE3B1]/70 mt-0.5">Click to send an email</div>
+                                </div>
+                            </a>
+
+                            <!-- Phone Link -->
+                            <a href="tel:8484699269" class="flex items-start gap-4 p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-colors group">
+                                <div class="w-12 h-12 rounded-xl bg-[#998731] text-white flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs uppercase font-bold text-[#5FA8C2] tracking-wider">Phone Number</div>
+                                    <div class="text-lg font-bold text-white">848-469-9269</div>
+                                    <div class="text-xs text-[#FAE3B1]/70 mt-0.5">Click to place a call</div>
+                                </div>
+                            </a>
+
+                            <div class="pt-2 text-xs text-[#FAE3B1]/80 italic">
+                                Available for media marketing roles, social content strategy, and creative video projects.
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right: Interactive Contact Form (7 Cols) -->
+                    <div class="lg:col-span-7 bg-white rounded-3xl p-8 border-2 border-[#998731] custom-shadow">
+                        <form id="portfolioContactForm" class="space-y-6">
+                            <h3 class="text-2xl font-extrabold text-[#673C32]">Send a Direct Message</h3>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="senderName" class="block text-xs font-bold text-[#673C32] uppercase tracking-wider mb-2">Your Name</label>
+                                    <input type="text" id="senderName" required placeholder="Full Name" class="w-full px-4 py-3 rounded-xl bg-[#FAE3B1]/30 border-2 border-[#998731]/40 text-[#673C32] font-semibold focus:outline-none focus:border-[#5FA8C2] transition-colors">
+                                </div>
+                                <div>
+                                    <label for="senderEmail" class="block text-xs font-bold text-[#673C32] uppercase tracking-wider mb-2">Your Email</label>
+                                    <input type="email" id="senderEmail" required placeholder="name@domain.com" class="w-full px-4 py-3 rounded-xl bg-[#FAE3B1]/30 border-2 border-[#998731]/40 text-[#673C32] font-semibold focus:outline-none focus:border-[#5FA8C2] transition-colors">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="senderSubject" class="block text-xs font-bold text-[#673C32] uppercase tracking-wider mb-2">Subject</label>
+                                <input type="text" id="senderSubject" required placeholder="Media Marketing Inquiry / Project" class="w-full px-4 py-3 rounded-xl bg-[#FAE3B1]/30 border-2 border-[#998731]/40 text-[#673C32] font-semibold focus:outline-none focus:border-[#5FA8C2] transition-colors">
+                            </div>
+
+                            <div>
+                                <label for="senderMessage" class="block text-xs font-bold text-[#673C32] uppercase tracking-wider mb-2">Message</label>
+                                <textarea id="senderMessage" rows="4" required placeholder="Hello Aadya, I would love to connect about..." class="w-full px-4 py-3 rounded-xl bg-[#FAE3B1]/30 border-2 border-[#998731]/40 text-[#673C32] font-semibold focus:outline-none focus:border-[#5FA8C2] transition-colors resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-[#5FA8C2] hover:bg-[#488FA7] text-white font-extrabold text-base shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Submit Message</span>
+                            </button>
+                        </form>
+
+                        <!-- Success Notification Container -->
+                        <div id="formFeedback" class="hidden mt-6 p-4 rounded-2xl bg-[#5FA8C2]/15 border-2 border-[#5FA8C2] text-[#673C32] font-bold text-sm items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-2xl text-[#5FA8C2]"></i>
+                            <div>
+                                <div>Thank you! Your message inquiry has been recorded.</div>
+                                <div class="text-xs font-medium text-[#673C32]/80 mt-0.5">I will respond to your email at aadya.jaiswal@gmail.com shortly.</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL 1: Social Campaign Modal -->
+    <div id="campaignModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white border-2 border-[#998731] rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-5 relative shadow-2xl">
+            <button onclick="closeModal('campaignModal')" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#FAE3B1] text-[#673C32] font-bold hover:bg-[#998731] hover:text-white transition-colors flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[#5FA8C2] text-white flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-hashtag"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-[#673C32]">Social Media Marketing Strategy</h3>
+            </div>
+
+            <p class="text-sm text-[#673C32] leading-relaxed font-medium">
+                Combining graphics from Canva and Adobe Illustrator, this project established visual guidelines for digital campaigns, tailored layouts for engagement metrics, and strategic content planning.
+            </p>
+
+            <div class="p-4 rounded-2xl bg-[#FAE3B1] space-y-2">
+                <div class="text-xs uppercase font-extrabold text-[#998731]">Tools Utilized:</div>
+                <div class="flex flex-wrap gap-2 text-xs font-bold text-[#673C32]">
+                    <span class="px-2.5 py-1 rounded-md bg-white">Canva</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white">Adobe Illustrator</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white">Social Media Design</span>
+                </div>
+            </div>
+
+            <div class="pt-2 flex justify-end">
+                <button onclick="closeModal('campaignModal')" class="px-6 py-2.5 rounded-xl bg-[#673C32] text-[#FAE3B1] font-bold text-sm hover:bg-[#4A2A22] transition-colors">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: Photo Portfolio Modal -->
+    <div id="photoModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white border-2 border-[#998731] rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-5 relative shadow-2xl">
+            <button onclick="closeModal('photoModal')" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#FAE3B1] text-[#673C32] font-bold hover:bg-[#998731] hover:text-white transition-colors flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[#998731] text-white flex items-center justify-center text-xl font-bold">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+                <h3 class="text-2xl font-extrabold text-[#673C32]">Visual Storytelling & Photography</h3>
+            </div>
+
+            <p class="text-sm text-[#673C32] leading-relaxed font-medium">
+                Focusing on digital photography, lighting setups, and advanced photo retouching in Adobe Photoshop to create visually compelling storytelling imagery.
+            </p>
+
+            <div class="p-4 rounded-2xl bg-[#FAE3B1] space-y-2">
+                <div class="text-xs uppercase font-extrabold text-[#998731]">Tools Utilized:</div>
+                <div class="flex flex-wrap gap-2 text-xs font-bold text-[#673C32]">
+                    <span class="px-2.5 py-1 rounded-md bg-white">Photography</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white">Adobe Photoshop</span>
+                    <span class="px-2.5 py-1 rounded-md bg-white">Content Creation</span>
+                </div>
+            </div>
+
+            <div class="pt-2 flex justify-end">
+                <button onclick="closeModal('photoModal')" class="px-6 py-2.5 rounded-xl bg-[#673C32] text-[#FAE3B1] font-bold text-sm hover:bg-[#4A2A22] transition-colors">
+                    Close Window
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#673C32] text-[#FAE3B1] py-10 border-t-4 border-[#998731]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-[#FAE3B1] text-[#673C32] font-extrabold flex items-center justify-center text-base">
+                    AJ
+                </div>
+                <span class="font-extrabold text-lg tracking-tight">Aadya Jaiswal</span>
+            </div>
+
+            <div class="text-xs text-[#FAE3B1]/80 font-medium text-center">
+                Email: <a href="mailto:aadya.jaiswal@gmail.com" class="hover:underline text-[#5FA8C2]">aadya.jaiswal@gmail.com</a> &bull; Phone: <a href="tel:8484699269" class="hover:underline text-[#5FA8C2]">848-469-9269</a>
+            </div>
+
+            <div class="text-xs text-[#FAE3B1]/70">
+                &copy; <span id="yearSpan"></span> Aadya Jaiswal. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set footer year
+            document.getElementById('yearSpan').textContent = new Date().getFullYear();
+
+            // Mobile menu toggle logic
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Contact Form Submit Handler
+            const portfolioContactForm = document.getElementById('portfolioContactForm');
+            const formFeedback = document.getElementById('formFeedback');
+
+            portfolioContactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Reveal feedback box without using alert()
+                formFeedback.classList.remove('hidden');
+                formFeedback.classList.add('flex');
+
+                portfolioContactForm.reset();
+
+                setTimeout(() => {
+                    formFeedback.classList.add('hidden');
+                    formFeedback.classList.remove('flex');
+                }, 7000);
+            });
+        });
+
+        // Modal opening/closing functions
+        function openModal(modalId) {
+            const m = document.getElementById(modalId);
+            if(m) {
+                m.classList.remove('hidden');
+                m.classList.add('flex');
+            }
+        }
+
+        function closeModal(modalId) {
+            const m = document.getElementById(modalId);
+            if(m) {
+                m.classList.add('hidden');
+                m.classList.remove('flex');
+            }
+        }
+    </script>
+</body>
